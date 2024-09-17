@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Yanone+Kaffeesatz:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
     margin: 0;
@@ -8,9 +8,10 @@
 body {
     width: 100%;
     background: linear-gradient(to top, #73BBC9, #AAD9E1);
-    text-align: center;
-    font-family: "oswald", sans-serif;
-    overflow-x: hidden;
+    font-family: "inter", sans-serif;
+    letter-spacing: 3px;
+    color: white;
+    text-transform: capitalize;
 }
 button {
     background: rgb(37, 35, 156);
@@ -33,48 +34,98 @@ button:active {
 /* ********************* HEADER ****************** */
 
 header {
+    position: relative;
     background-image: url(./Media/hero.jpeg);
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* *************** Navigation ************** */
 nav {
+    position: absolute;
+    top: 0;
     height: 60px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    z-index: 2;
 }
-.logo {
-    height: 40px;
-    width: 100px;
+.nav-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 ul {
-    width: 40%;
+    width: 80%;
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 li a {
     display: block;
-    color: rgb(175, 171, 171);
-    text-align: center;
+    color:  #fca119;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: 600;
 }
 li a:hover {
-    background: rgb(38, 104, 124);
+    color: #82f16b;
 }
-.title {
-    color: rgb(37, 37, 37);
-    margin: 80px;
+
+/* **************** hero ************* */
+
+.hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero .logo {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: fit-content;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.title-subtitle {
     text-align: center;
+    text-transform: uppercase;
 }
 h1 {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 7rem;
+    color: #82f16b;
+    font-weight: 700;
+    font-size: clamp(2rem, 1.8125rem + 0.75vw, 2.6rem);
     padding: 10px;
+}
+
+h1 span {
+    color: #fca119;
 }
 @media screen and (max-width: 652px) {
     h1 {
